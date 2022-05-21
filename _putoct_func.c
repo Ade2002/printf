@@ -8,16 +8,16 @@
 
 int int_to_oct(int decimalnum)
 {
-    int octnum = 0, val = 1;
+int octnum = 0, val = 1;
 
-    while (decimalnum != 0)
-    {
-    	octnum += (decimalnum % 8) * val;
-    	decimalnum = decimalnum / 8;
-        val *= 10;
-    }
+while (decimalnum != 0)
+{
+octnum += (decimalnum % 8) * val;
+decimalnum = decimalnum / 8;
+val *= 10;
+}
 
-    return octnum;
+return (octnum);
 }
 
 /**
@@ -29,7 +29,8 @@ int int_to_oct(int decimalnum)
 
 int _putoct_func(va_list ap)
 {
-    int int_num = va_arg(ap, unsigned int);
-    int j = int_to_oct(int_num);
-    print_number(j);
+int int_num = va_arg(ap, unsigned int);
+int j = int_to_oct(int_num);
+print_number(j);
+return (0);
 }

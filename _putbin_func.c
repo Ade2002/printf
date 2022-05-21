@@ -25,4 +25,5 @@ int _putbin_func(va_list ap)
 int int_num = va_arg(ap, unsigned int);
 int j = int_to_bin(int_num);
 print_number(j);
+return (0);
 }

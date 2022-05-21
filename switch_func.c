@@ -26,4 +26,6 @@ return (_puthexL_func);
 if (c == 'X')
 return (_puthexU_func);
 return (NULL);
+if (c == 'R')
+return (revstr);
 }
