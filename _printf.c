@@ -8,8 +8,8 @@
 int _printf(const char *format, ...)
 {
 va_list ap;
-int i = 0, j = 0, int_num = 0;
-char *string = NULL;
+int i = 0;
+
 int char_num = 0;
 int (*identifier_check)(va_list);
 
