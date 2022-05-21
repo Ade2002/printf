@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int_to_oct: converts a decimal to octal
+ * int_to_oct - converts a decimal to octal
  * @decimalnum: decimal value to be converted
  * Return: return octal value
  */
@@ -21,7 +21,7 @@ return (octnum);
 }
 
 /**
- * _putoct_func: prints out an octal conversion for
+ * _putoct_func -  prints out an octal conversion for
  * the 'o' flag.
  * @ap: a variadic list
  * Return: return 0 on success
