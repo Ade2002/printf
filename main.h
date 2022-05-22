@@ -116,7 +116,8 @@ int write_format(va_list *args_list, fmt_info_t *fmt_info);
 
 void init_format_struct(fmt_info_t *spec);
 fmt_info_t *new_format_info();
-float_info_t *new_float_info(unsigned_short_t exponent_size, unsigned_short_t mantissa_size);
+float_info_t *new_float_info(unsigned_short_t exponent_size,
+			     unsigned_short_t mantissa_size);
 void free_float_info(float_info_t *flt_info);
 
 
