@@ -124,6 +124,18 @@ A partial rebuild of the standard *printf* function in C.
 
 >Functions that process address, ROT13, and reverse string printing
 
+### string_fields.c
+
+>Functions that processesx the precision from the format string
+
+### specifier.c
+
+>Functions that process the user input flags/identifiers. Samples Seen below:
+
+``` c
+/* Indetifier : %c or %i or %d or %s or %o or %x or %X or %r or %R or %b or %u */
+```
+
 ---
 
 ## Issues
