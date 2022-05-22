@@ -1,6 +1,7 @@
 # Printf Function for C
-chmod u+x type_funct_2.c && git add --chmod=+x type_funct_2.c && git commit -m 'task 007 type_funct_2.c' && git push
-git add . && git commit -m 'created readme'
+
+A partial rebuild of the standard *printf* function in C.
+
 ---
 
 ## Description
@@ -23,6 +24,10 @@ git add . && git commit -m 'created readme'
 | u  | Unsigned integer  |
 | x  | Unsigned hexadecimal  |
 | X  | Unsigned hexadecimal (uppercase)  |
+| p  | Pointer address  |
+| r  | Reverse string of characters |
+| R  | ROT13 translation of string |
+| S  | String with special chars replaced by their ASCII value  |
 | %  | Character  |
 
 ---
@@ -57,10 +62,23 @@ git add . && git commit -m 'created readme'
 
     + Output: `10 in binary is 1010, in octal is 12`
 
+5. Printing a hexadecimal:
+    + Use: `_printf("10 in Hexadecimal:[%X]\n", 10); OR _printf("10 in Hexadecimal:[%v]\n", 10);`
+    + Output: `10 in Hexadecimal:[A] OR 10 in Hexadecimal:[a]`
+
+6. Printing a string codified in ROT13:
+    + Use: `_printf("Hello in ROT13 is %R", "Hello");`
+    + Output: `Hello in ROT13 is Urybb`
+
+7. Printing a reversed string:
+    + Use: `_printf("Hello in reversed format is %r\n", "Hello");`
+    + Output: `Hello in reversed format is olleH`
+
 ## Compilation
 
 ---
-> gcc -Wall -Werror -Wextra -pedantic *.c
+> gcc -Wall -Wextra -Werror -pedantic -std=gnu89 *.c
+
 
 ---
 
@@ -72,11 +90,11 @@ git add . && git commit -m 'created readme'
 
 ### _putchar.c
 
-+ >Function That Prints to the screen.
++ >Function That Prints characters to the screen.
 
-### print_number.c
+### fmt_info.c
 
-+ >Function That Prints integers.
++ >Function That initialize and specify structure.
 
 ### man_3_printf
 
@@ -86,59 +104,41 @@ git add . && git commit -m 'created readme'
 
 + >Header File Where All Prototypes Are Saved.
 
-### _putbin_func.c
+### funct.support.c
 
-+ >Function That Prints A Binary formatted output
++ >Function That Specifies all the supported functions/flags.
 
-```c
-/* Indetifier : %b */
-```
+### functions 1,2,3.c
 
-### _putchar_func.c
-
-+ >Function That Prints A character formatted output
++ >Functions that carry out different actions per specified flags.
 
 ``` c
-/* Indetifier : %c */
+/* Indetifier : %c or %i or %d or %s or %o or %x or %X or %r or %R or %b or %u */
 ```
 
-### _putint_func.c
+### num_funct1,2,3.c
 
-+ >Function That Prints An Integer.
++ >Functions That carry out numeric actions.
 
-```c
- /* Indetifier : %i or %d */
-```
+### str_funct_1,2,3.c
 
-### _putoct_func.c
++ >Functions that carry out string/character actions.
 
-+ >Function That Prints A Number In Octal.
+### type_func_1,2.c
 
-```c
-/* Indetifier : %o */
-```
++ >Functions that process string/numeric types; signed, unsigned, lomg, short, float
 
-### _putstr_func.c
+---
 
-Function That Writes The String To Stdout.
+## Issues
 
-```c
-/* Indetifier : %s */
-```
+> Report issues/bug here: [Issues](https://github.com/Ade2002/printf/issues)
 
-### _puthexL_func
-Function That Prints Decimal In Hexadecimal in lower case.
-```c
-/* Indetifier : %x */
-```
-
-### _puthexU_func
-Function That Prints Decimal In Hexadecimal in upper case.
-```c
-/* Indetifier : %x */
-```
+---
 
 ## Contributors
 
-+ **Olufolabi** - [oolufolabii](github.com/oolufolabii/)
-+ **Ademola** - [ade2002](https://github.com/Ade2002/)
++ **Olufolabi Otitoola** - [oolufolabii](github.com/oolufolabii/)
++ **Ademola Sikiru** - [ade2002](https://github.com/Ade2002/)
+
+

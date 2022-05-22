@@ -4,27 +4,28 @@
  * @spec: The format info to initialize
  */
 
+
 void init_format_struct(fmt_info_t *spec)
 {
-    if (spec)
-    {
-        spec->prec = 6;
-        spec->width = 0;
-        spec->spec = FALSE;
-        spec->is_long_double = FALSE;
-        spec->is_long_long = FALSE;
-        spec->is_long = FALSE;
-        spec->is_short = FALSE;
-        spec->is_char = FALSE;
-        spec->is_precision_set = FALSE;
-        spec->is_width_set = FALSE;
-        spec->alt = FALSE;
-        spec->space = FALSE;
-        spec->left = FALSE;
-        spec->show_sign = FALSE;
-        spec->group = FALSE;
-        spec->pad = ' ';
-    }
+if (spec)
+{
+spec->prec = 6;
+spec->width = 0;
+spec->spec = FALSE;
+spec->is_long_double = FALSE;
+spec->is_long_long = FALSE;
+spec->is_long = FALSE;
+spec->is_short = FALSE;
+spec->is_char = FALSE;
+spec->is_precision_set = FALSE;
+spec->is_width_set = FALSE;
+spec->alt = FALSE;
+spec->space = FALSE;
+spec->left = FALSE;
+spec->show_sign = FALSE;
+spec->group = FALSE;
+spec->pad = ' ';
+}
 }
 
 /**
@@ -34,11 +35,11 @@ void init_format_struct(fmt_info_t *spec)
  */
 fmt_info_t *new_format_info()
 {
-    fmt_info_t *spec;
-    spec = malloc(sizeof(fmt_info_t));
-    if (spec)
-        init_format_struct(spec);
-    return (spec);
+fmt_info_t *spec;
+spec = malloc(sizeof(fmt_info_t));
+if (spec)
+init_format_struct(spec);
+return (spec);
 }
 
 /**
@@ -50,22 +51,22 @@ fmt_info_t *new_format_info()
  */
 float_info_t *new_float_info(unsigned_short_t exponent_size, unsigned_short_t mantissa_size)
 {
-    float_info_t *float_info;
+float_info_t *float_info;
 
-    float_info = malloc(sizeof(float_info_t));
-    if (float_info)
-    {
-        float_info->exponent = malloc(sizeof(char) * exponent_size);
-        if (!float_info->exponent)
-            free(float_info);
-        float_info->mantissa = malloc(sizeof(char) * mantissa_size);
-        if (!float_info->mantissa)
-        {
-            free(float_info->exponent);
-            free(float_info);
-        }
-    }
-    return (float_info);
+float_info = malloc(sizeof(float_info_t));
+if (float_info)
+{
+float_info->exponent = malloc(sizeof(char) * exponent_size);
+if (!float_info->exponent)
+free(float_info);
+float_info->mantissa = malloc(sizeof(char) * mantissa_size);
+if (!float_info->mantissa)
+{
+free(float_info->exponent);
+free(float_info);
+}
+}
+return (float_info);
 }
 
 /**
@@ -74,12 +75,12 @@ float_info_t *new_float_info(unsigned_short_t exponent_size, unsigned_short_t ma
  */
 void free_float_info(float_info_t *flt_info)
 {
-    if (flt_info)
-    {
-        if (flt_info->exponent)
-            free(flt_info->exponent);
-        if (flt_info->mantissa)
-            free(flt_info->mantissa);
-        free(flt_info);
-    }
+if (flt_info)
+{
+if (flt_info->exponent)
+free(flt_info->exponent);
+if (flt_info->mantissa)
+free(flt_info->mantissa);
+free(flt_info);
+}
 }
