@@ -80,7 +80,6 @@ A partial rebuild of the standard *printf* function in C.
 ---
 > gcc -Wall -Wextra -Werror -pedantic -std=gnu89 *.c
 
-
 ---
 
 ## File Functions
