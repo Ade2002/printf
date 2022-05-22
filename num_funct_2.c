@@ -2,7 +2,6 @@
 /**
  * hex_digit - converts a decimal less than 16 to its hexadecimal form
  * @c: The decimal
- *
  * Return: The hexadecimal digit, otherwise '\0'
  */
 char hex_digit(char c)
