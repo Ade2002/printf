@@ -1,5 +1,5 @@
 # Printf Function for C
-chmod u+x main.c && git add --chmod=+x main.c && git commit -m 'main.c main.c' && git push
+chmod u+x string-fields.c && git add --chmod=+x string-fields.c && git commit -m 'string-fields.c' && git push
 git add . && git commit -m 'created readme'
 A partial rebuild of the standard *printf* function in C.
 

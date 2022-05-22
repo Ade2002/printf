@@ -1,187 +1,119 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
+
 #include <stdarg.h>
-#ifndef TRUE
-#define TRUE 1
-#endif
-#ifndef FALSE
-#define FALSE 0
-#endif
-#ifndef NULL
-#define NULL ((void *)0)
-#endif
-#ifndef MAX_WIDTH
-#define MAX_WIDTH "2147483647"
-#endif
-#ifndef MAX
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-#endif
-#ifndef ABS
-#define ABS(a) ((a) > (0) ? (a) : (0 - (a)))
-#endif
-#ifndef TO_UPPER
-#define TO_UPPER(c) ((c) >= 'a' && (c) <= 'z' ? (c) - 6 - 26 : (c))
-#endif
-#ifndef TO_LOWER
-#define TO_LOWER(c) ((c) >= 'A' && (c) <= 'Z' ? (c) + 6 + 26 : (c))
-#endif
+#include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
+#include <stdlib.h>
+
+#define OUTPUT_BUF_SIZE 1024
+#define BUF_FLUSH -1
+
+#define FIELD_BUF_SIZE 50
+
+#define NULL_STRING "(null)"
+
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+
+#define CONVERT_LOWERCASE	1
+#define CONVERT_UNSIGNED	2
 
 /**
- * struct format_info - Contains information about the options
- * \ and flags appearing in an instance of the conversion specifier
- * @prec: The specified precision
- * @width: The length of the formatted data
- * @spec: The specified conversion specifier character
- * @is_long_double: Specifies the presence of the 'L' length modifier
- * @is_long_long: Specifies the presence of the 'll' length modifier
- * @is_long: Specifies the presence of the 'l' length modifier
- * @is_short: Specifies the presence of the 'h' length modifier
- * @is_char: Specifies the presence of the 'hh' length modifier
- * @is_precision_set: Specifies the presence of a precision value
- * @is_width_set: Specifies the presence of a width value
- * @alt: Specifies the presence of the '#' flag
- * @space: Specifies the presence of the ' ' (invisible plus sign) flag
- * @left: Specifies the presence of the '-' (left-align) flag
- * @show_sign: Specifies the presence of the '+' flag
- * @group: The current locale's digit separator for integers
- * @pad: This is the character to use for padding the output
+ * struct parameters - parameters struct
+ *
+ * @unsign: flag if unsigned value
+ *
+ * @plus_flag: on if plus_flag specified
+ * @space_flag: on if hashtag_flag specified
+ * @hashtag_flag: on if _flag specified
+ * @zero_flag: on if _flag specified
+ * @minus_flag: on if _flag specified
+ *
+ * @width: field width specified
+ * @precision: field precision specified
+ *
+ * @h_modifier: on if h_modifier is specified
+ * @l_modifier: on if l_modifier is specified
+ *
  */
-struct format_info
+typedef struct parameters
 {
-int prec;
-int width;
-char spec;
-char is_long_double;
-char is_long;
-char is_long_long;
-char is_short;
-char is_char;
-char is_precision_set;
-char is_width_set;
-char alt;
-char space;
-char left;
-char show_sign;
-char group;
-char pad;
-};
-typedef struct format_info fmt_info_t;
-/**
- * struct spec_printer - Represents a function that prints an argument
- * \ based on a determined format
- * @spec: The conversion specifier
- * @print_arg: The pointer to the printing function
- */
-struct spec_printer
-{
-char spec;
-int (*print_arg)(va_list *args, fmt_info_t *fmt_info);
-};
-typedef struct spec_printer spec_printer_t;
-typedef unsigned char uchar_t;
-typedef unsigned short ushort_t;
+	unsigned int unsign			: 1;
+
+	unsigned int plus_flag		: 1;
+	unsigned int space_flag		: 1;
+	unsigned int hashtag_flag	: 1;
+	unsigned int zero_flag		: 1;
+	unsigned int minus_flag		: 1;
+
+	unsigned int width;
+	unsigned int precision;
+
+	unsigned int h_modifier		: 1;
+	unsigned int l_modifier		: 1;
+} params_t;
 
 /**
- * struct float_info - Represents the IEE754 specification of a float
- * @sign: The sign of the float
- * @exponent: The exponent of the float
- * @mantissa: The mantissa of the float
+ * struct specifier - Struct token
+ *
+ * @specifier: format token
+ * @f: The function associated
  */
-struct float_info
+typedef struct specifier
 {
-char sign;
-char *exponent;
-char *mantissa;
-};
-typedef struct float_info float_info_t;
+	char *specifier;
+	int (*f)(va_list, params_t *);
+} specifier_t;
 
+/* _put.c module */
+int _puts(char *str);
+int _putchar(int c);
 
-int _putchar(char c);
-int _putstr(char *str);
-int write_to_buffer(char c, char action);
+/* print_functions.c module */
+int print_char(va_list ap, params_t *params);
+int print_int(va_list ap, params_t *params);
+int print_string(va_list ap, params_t *params);
+int print_percent(va_list ap, params_t *params);
+int print_S(va_list ap, params_t *params);
+
+/* number.c module */
+char *convert(long int num, int base, int flags, params_t *params);
+int print_unsigned(va_list ap, params_t *params);
+int print_address(va_list ap, params_t *params);
+
+/* specifier.c module */
+int (*get_specifier(char *s))(va_list ap, params_t *params);
+int get_print_func(char *s, va_list ap, params_t *params);
+int get_flag(char *s, params_t *params);
+int get_modifier(char *s, params_t *params);
+char *get_width(char *s, params_t *params, va_list ap);
+
+/* convert_number.c module */
+int print_hex(va_list ap, params_t *params);
+int print_HEX(va_list ap, params_t *params);
+int print_binary(va_list ap, params_t *params);
+int print_octal(va_list ap, params_t *params);
+
+/* simple_printers.c module */
+int print_from_to(char *start, char *stop, char *except);
+int print_rev(va_list ap, params_t *params);
+int print_rot13(va_list ap, params_t *params);
+
+/* print_number.c module */
+int _isdigit(int c);
+int _strlen(char *s);
+int print_number(char *str, params_t *params);
+int print_number_right_shift(char *str, params_t *params);
+int print_number_left_shift(char *str, params_t *params);
+
+/* params.c module */
+void init_params(params_t *params, va_list ap);
+
+/* string_fields.c modoule */
+char *get_precision(char *p, params_t *params, va_list ap);
+
+/* _prinf.c module */
 int _printf(const char *format, ...);
-int write_format(va_list *args_list, fmt_info_t *fmt_info);
 
-
-void init_format_info(fmt_info_t *spec);
-fmt_info_t *new_format_info();
-float_info_t *new_float_info(ushort_t exponent_size, ushort_t mantissa_size);
-void free_float_info(float_info_t *flt_info);
-
-
-int set_number(const char *str, int *number);
-void set_length(char cur, char nxt, fmt_info_t *fmt_info);
-void set_flags(char cur, fmt_info_t *fmt_info);
-void set_precision(const char *str, va_list args,
-fmt_info_t *fmt_info, int *i, int *error_status);
-int read_format_info(const char *, va_list, fmt_info_t *);
-
-
-int convert_fmt_percent(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_p(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_c(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_s(va_list *args_list, fmt_info_t *fmt_info);
-
-int convert_fmt_di(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_xX(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_o(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_u(va_list *args_list, fmt_info_t *fmt_info);
-
-int convert_fmt_b(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_R(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_r(va_list *args_list, fmt_info_t *fmt_info);
-int convert_fmt_S(va_list *args_list, fmt_info_t *fmt_info);
-
-
-int str_len(char *str);
-void mem_set(char *str, int n, char c);
-void left_shift(char *str, int n);
-int index_of(char *str, char c);
-void rev_string(char *s);
-
-char *append_char(char *str, char c, int n, char can_free);
-char *delete_char(char *str, char c, char can_free);
-char *insert_char(char *str, int pos, char c, char can_free);
-int count_char(char *str, char c);
-char *str_cat(char *left, char *right, char can_free);
-
-char *sub_str(char *str, int i, char can_free);
-char *trim_start(char *str, char c, char can_free);
-char *trim_end(char *str, char c, char can_free);
-char *str_copy(char *str);
-
-
-char hex_digit(char c);
-char cmp_nums(char *left, char *right);
-int str_to_int(char *num);
-int bin_to_int(char *bin_str);
-char *long_to_oct(unsigned long num);
-
-char *multiply(char *num, char *multiple);
-char *add_int(char *left, char *right, int can_free);
-char *add_float(char *left, char *right, char can_free);
-char *mul_int(char *num1, char *num2, char can_free);
-char *mul_float(char *left, char *right, char can_free);
-
-char *div_by_10_exp(char *num, unsigned short n, char can_free);
-char *two_exp(short n);
-char *five_exp(unsigned short n);
-unsigned int two_pexp(unsigned int n);
-
-
-char *u_long_to_str(unsigned long num);
-char *long_to_str(long num);
-char *is_invalid(float_info_t *flt_info);
-
-void set_float_parts(double num, uchar_t exponent_size,
-uchar_t mantissa_size, float_info_t *float_info);
-char *mantissa_to_dec_fraction(char *mantissa, unsigned short frac_len);
-char *float_to_str(float_info_t *flt_info, char can_free);
-
-
-char is_digit(char c);
-char is_non_custom_specifier(char c);
-char is_specifier(char c);
-char is_flag(char c);
-char is_length(char c);
 #endif

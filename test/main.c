@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "../main.h"
 
 int main(void)
@@ -15,7 +14,6 @@ int main(void)
     printf("10 in Hexadecimal:[%X]\n", 10);
     
 }
-=======
 #include "main.h"
 /**
  *main - carry out the test
@@ -35,4 +33,3 @@ printf("10 in Hexadecimal:[%X]\n", 10);
 
 return (0);
 }
->>>>>>> 5ecb5847d47a7f8d3f10a0c6a775568d3fb4ef5d
