@@ -24,8 +24,6 @@ switch (c)
 case '%':
 case 'c':
 case 'd':
-/* case 'F': */
-/* case 'f': */
 case 'i':
 case 'n':
 case 'o':
@@ -62,6 +60,7 @@ case 'R':
 case 'r':
 case 'S':
 return (TRUE);
+
 default:
 return (FALSE);
 }
