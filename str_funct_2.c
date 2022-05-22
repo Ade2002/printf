@@ -7,11 +7,11 @@
  */
 int str_len(char *str)
 {
-int len = 0;
+    int len = 0;
 
-while (str != NULL && *(str + len) != '\0')
-len++;
-return (len);
+    while (str != NULL && *(str + len) != '\0')
+        len++;
+    return (len);
 }
 
 /**
@@ -23,10 +23,10 @@ return (len);
  */
 void mem_set(char *str, int n, char c)
 {
-int i;
+    int i;
 
-for (i = 0; str != NULL && i < n; i++)
-*(str + i) = c;
+    for (i = 0; str != NULL && i < n; i++)
+        *(str + i) = c;
 }
 
 /**
@@ -36,10 +36,10 @@ for (i = 0; str != NULL && i < n; i++)
  */
 void left_shift(char *str, int n)
 {
-int i;
+    int i;
 
-for (i = 1; i <= n; i++)
-str[i - 1] = str[i] != '\0' && str[i - 1] != '\0' ? str[i] : '\0';
+    for (i = 1; i <= n; i++)
+        str[i - 1] = str[i] != '\0' && str[i - 1] != '\0' ? str[i] : '\0';
 }
 
 /**
@@ -51,11 +51,11 @@ str[i - 1] = str[i] != '\0' && str[i - 1] != '\0' ? str[i] : '\0';
  */
 int index_of(char *str, char c)
 {
-int i;
+    int i;
 
-for (i = 0; *(str + i) != '\0' && *(str + i) != c; i++)
-;
-return (*(str + i) == c ? i : -1);
+    for (i = 0; *(str + i) != '\0' && *(str + i) != c; i++)
+        ;
+    return (*(str + i) == c ? i : -1);
 }
 
 /**
@@ -64,17 +64,17 @@ return (*(str + i) == c ? i : -1);
  */
 void rev_string(char *s)
 {
-int length = 0;
-int i;
+    int length = 0;
+    int i;
 
-while (*(s + length) != '\0')
-length++;
+    while (*(s + length) != '\0')
+        length++;
 
-for (i = 0; i < length / 2; i++)
-{
-char temp = *(s + length - i - 1);
+    for (i = 0; i < length / 2; i++)
+    {
+        char temp = *(s + length - i - 1);
 
-*(s + length - i - 1) = *(s + i);
-*(s + i) = temp;
-}
+        *(s + length - i - 1) = *(s + i);
+        *(s + i) = temp;
+    }
 }
