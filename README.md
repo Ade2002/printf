@@ -116,7 +116,7 @@ A partial rebuild of the standard *printf* function in C.
 
 >Functions That handles the print functions of char, strings, int, hex, oct.
 
-### str_funct_1,2,3.c
+### print_number.c
 
 >Functions that carry out string/character actions.
 
