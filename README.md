@@ -86,11 +86,11 @@ A partial rebuild of the standard *printf* function in C.
 
 ### _printf.c
 
-+ >Our own printf function that performs formatted output conversion and prints data to display.
+>Our own printf function that performs formatted output conversion and prints data to display.
 
 ### _putchar.c
 
-+ >Function That Prints characters to the screen.
+>Function That Prints characters to the screen.
 
 ### fmt_info.c
 
