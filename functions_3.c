@@ -3,7 +3,6 @@
  * convert_fmt_b - Prints the binary format of an unsigned int argument
  * @args_list: The arguments list
  * @fmt_info: The format info
- *
  * Return: The number of characters written
  */
 int convert_fmt_b(va_list *args_list, fmt_info_t *fmt_info)
