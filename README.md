@@ -118,7 +118,7 @@ A partial rebuild of the standard *printf* function in C.
 
 ### print_number.c
 
->Functions that carry out string/character actions.
+>Functions that carry out number print based on different options.
 
 ### type_func_1,2.c
 
