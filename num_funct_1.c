@@ -3,7 +3,6 @@
  * multiply - Computes the product of a number and a multiple of 10
  * @num: The first number
  * @multiple: The second number (a multiple of 10)
- *
  * Return: A pointer containing the result, otherwise program fails
  */
 char *multiply(char *num, char *multiple)
