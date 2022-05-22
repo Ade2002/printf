@@ -25,7 +25,6 @@ int convert_fmt_p(va_list *args_list, fmt_info_t *fmt_info)
 int i, chars_count = 0, size = 16;
 size_t num = va_arg(*args_list, size_t), tmp;
 char *str;
-
 (void)fmt_info;
 (void)args_list;
 str = malloc(sizeof(char) * (size));
