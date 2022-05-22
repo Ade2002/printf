@@ -80,6 +80,7 @@ A partial rebuild of the standard *printf* function in C.
 ---
 > gcc -Wall -Wextra -Werror -pedantic -std=gnu89 *.c
 
+
 ---
 
 ## File Functions
@@ -147,4 +148,4 @@ A partial rebuild of the standard *printf* function in C.
 ## Contributors
 
 + **Olufolabi Otitoola** - [oolufolabii](github.com/oolufolabii/)
-+ **Ademola Sikiru** - [ade2002](https://github.com/Ade2002/) 
++ **Ademola Sikiru** - [ade2002](https://github.com/Ade2002/)
