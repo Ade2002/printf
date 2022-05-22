@@ -135,4 +135,3 @@ free(right);
 }
 return (str);
 }
-  str_funct_2.c str_funct_3.c type_funct_1.c type_funct_2.c
