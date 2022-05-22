@@ -122,11 +122,11 @@ A partial rebuild of the standard *printf* function in C.
 
 ### str_funct_1,2,3.c
 
-+ >Functions that carry out string/character actions.
+>Functions that carry out string/character actions.
 
 ### type_func_1,2.c
 
-+ >Functions that process string/numeric types; signed, unsigned, lomg, short, float
+>Functions that process string/numeric types; signed, unsigned, lomg, short, float
 
 ---
 
@@ -139,7 +139,4 @@ A partial rebuild of the standard *printf* function in C.
 ## Contributors
 
 + **Olufolabi Otitoola** - [oolufolabii](github.com/oolufolabii/)
-+ **Ademola Sikiru** - [ade2002](https://github.com/Ade2002/)
-
-
- 
++ **Ademola Sikiru** - [ade2002](https://github.com/Ade2002/) 
