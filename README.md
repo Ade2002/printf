@@ -94,11 +94,11 @@ A partial rebuild of the standard *printf* function in C.
 
 ### fmt_info.c
 
-+ >Function That initialize and specify structure.
+>Function That initialize and specify structure.
 
 ### man_3_printf
 
-+ >Manual Page
+>Manual Page
 
 ### main.h
 
