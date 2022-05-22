@@ -21,7 +21,7 @@ int _printf(const char *format, ...);
        rectives:  ordinary  characters  (not  %),  which  are copied unchanged to the output stream; and conversion specifications, each of which results in
        fetching zero or more subsequent arguments.  Each conversion specification is introduced by the character %, and ends with  a  conversion  specifier.
        In the case of a double "%" i.e. "%%", the first "%" acts as an escape character for the second "%" and prints out only one "%" in the formated output.
-       In between there may be (in this order) zero or more flags and subsequent arguments. 
+       In between there may be (in this order) zero or more flags and subsequent arguments.
 
 	_printf("%d", num);
 
