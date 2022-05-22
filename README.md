@@ -88,11 +88,11 @@ A partial rebuild of the standard *printf* function in C.
 
 >Our own printf function that performs formatted output conversion and prints data to display.
 
-### _putchar.c
+### _puts.c
 
->Function That Prints characters to the screen.
+>Function That Prints strings and characters to the screen.
 
-### fmt_info.c
+### conver.c
 
 >Function That initialize and specify structure.
 
