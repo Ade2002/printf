@@ -92,9 +92,9 @@ A partial rebuild of the standard *printf* function in C.
 
 >Function That Prints strings and characters to the screen.
 
-### conver.c
+### conver_number.c
 
->Function That initialize and specify structure.
+>Function That processes the Hexadecimal, octal, binary conversions.
 
 ### man_3_printf
 
@@ -104,7 +104,7 @@ A partial rebuild of the standard *printf* function in C.
 
 >Header File Where All Prototypes Are Saved.
 
-### funct.support.c
+### numbers.c
 
 >Function That Specifies all the supported functions/flags.
 
