@@ -20,6 +20,7 @@ int (*switch_func(char c))(va_list);
 void print_number(int n);
 void print_number_hex(int n);
 
+int revstr(va_list ap);
 int _putoct_func(va_list ap);
 
 #endif /* _MAIN_H_ */
