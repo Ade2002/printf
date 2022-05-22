@@ -108,7 +108,7 @@ A partial rebuild of the standard *printf* function in C.
 
 >Function That Specifies all the supported functions/flags.
 
-### functions 1,2,3.c
+### params.c
 
 >Functions that carry out different actions per specified flags.
 
