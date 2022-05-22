@@ -110,7 +110,7 @@ A partial rebuild of the standard *printf* function in C.
 
 ### functions 1,2,3.c
 
-+ >Functions that carry out different actions per specified flags.
+>Functions that carry out different actions per specified flags.
 
 ``` c
 /* Indetifier : %c or %i or %d or %s or %o or %x or %X or %r or %R or %b or %u */
@@ -118,7 +118,7 @@ A partial rebuild of the standard *printf* function in C.
 
 ### num_funct1,2,3.c
 
-+ >Functions That carry out numeric actions.
+>Functions That carry out numeric actions.
 
 ### str_funct_1,2,3.c
 
