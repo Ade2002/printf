@@ -4,6 +4,7 @@
 .B _printf
 \- function to print formatted output of arguments
 .SH SYNOPSIS
+
 #include "main.h"
 int _printf(const char *format, ...);
 
