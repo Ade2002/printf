@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * init_format_info - initializes a format info struct
+ * init_format_struct - initializes a format info struct
  * @spec: The format info to initialize
  */
 
@@ -49,7 +49,8 @@ return (spec);
  *
  * Return: The pointer to the newly created struct, otherwise NULL
  */
-float_info_t *new_float_info(unsigned_short_t exponent_size, unsigned_short_t mantissa_size)
+float_info_t *new_float_info(unsigned_short_t exponent_size,
+			     unsigned_short_t mantissa_size)
 {
 float_info_t *float_info;
 
