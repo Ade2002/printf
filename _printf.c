@@ -47,6 +47,7 @@ write_buffer(0, 1);
 va_end(args);
 return (char_count);
 }
+
 /**
  * write_format - Writes data formatted against some parameters
  * @args_list: The arguments list
@@ -108,7 +109,7 @@ return (out);
 
 
 /**
- * write_to_buffer - Writes a char to the buffer based on an action code
+ * write_buffer - Writes a char to the buffer based on an action code
  * @c: The character to write
  * @action: The action to perform (
  * -1-> reset the static variables
