@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * append_char - Adds multiple copies of a given character to the
  * \ end of a string
