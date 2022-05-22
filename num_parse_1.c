@@ -3,7 +3,6 @@
  * set_number - Retrieves a number from the given string
  * @str: The string to retrieve the number from
  * @number: The pointer to the number
- *
  * Return: The number of positions that were moved
  */
 int set_number(const char *str, int *number)
