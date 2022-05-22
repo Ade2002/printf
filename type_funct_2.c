@@ -8,6 +8,7 @@
  * @mantissa_size: The number of bits in the mantissa part
  * @float_info: The float_info struct
  */
+
 void set_float_parts(double num, unsigned_char_t exponent_size,
 unsigned_char_t mantissa_size, float_info_t *float_info)
 {
