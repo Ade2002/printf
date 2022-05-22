@@ -1,5 +1,5 @@
 # Printf Function for C
-chmod u+x main.h && git add --chmod=+x main.h && git commit -m 'main.h main.h' && git push
+chmod u+x num_funct_1.c && git add --chmod=+x num_funct_1.c && git commit -m 'num_funct_1.c num_funct_1.c' && git push
 git add . && git commit -m 'created readme'
 ---
 
