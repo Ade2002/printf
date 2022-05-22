@@ -122,7 +122,7 @@ A partial rebuild of the standard *printf* function in C.
 
 ### simple_printers.c
 
->Functions that process string/numeric types; signed, unsigned, lomg, short, float
+>Functions that process address, ROT13, and reverse string printing
 
 ---
 
