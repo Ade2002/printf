@@ -11,7 +11,6 @@ int convert_fmt_di(va_list *args_list, fmt_info_t *fmt_info)
 int i, chars_count = 0, len, zero_pads_count = 0;
 long num;
 char *str;
-
 if (fmt_info->is_long)
 num = va_arg(*args_list, long);
 else if (fmt_info->is_short)
@@ -71,8 +70,8 @@ size = fmt_info->is_short ? 4 : (fmt_info->is_char ? 2 : 8);
 mem_set(str, 8, 0);
 tmp = num;
 for (i = 0; i <= size && tmp > 0; i++, len++)
-{
-*(str + i) = (tmp % 16) < 10 ? (tmp % 16) + '0'
+{*(str + i) = (tmp % 16) < 10 ? (tmp % 16) + '0'
+
 : (tmp % 16) - 10 + 'a' + (fmt_info->spec == 'X' ? -6 - 26 : 0);
 tmp /= 16;
 }
