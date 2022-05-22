@@ -112,7 +112,6 @@ A partial rebuild of the standard *printf* function in C.
 
 >Functions that clears struct fields and reset buffer.
 
-
 ### print-functions.c
 
 >Functions That carry out numeric actions.
