@@ -102,11 +102,11 @@ A partial rebuild of the standard *printf* function in C.
 
 ### main.h
 
-+ >Header File Where All Prototypes Are Saved.
+>Header File Where All Prototypes Are Saved.
 
 ### funct.support.c
 
-+ >Function That Specifies all the supported functions/flags.
+>Function That Specifies all the supported functions/flags.
 
 ### functions 1,2,3.c
 
