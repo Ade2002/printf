@@ -126,7 +126,7 @@ A partial rebuild of the standard *printf* function in C.
 
 ### string_fields.c
 
->Functions that processesx the precision from the format string
+>Functions that processes the precision from the format string
 
 ### specifier.c
 
