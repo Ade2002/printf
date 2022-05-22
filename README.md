@@ -120,7 +120,7 @@ A partial rebuild of the standard *printf* function in C.
 
 >Functions that carry out number print based on different options.
 
-### type_func_1,2.c
+### simple_printers.c
 
 >Functions that process string/numeric types; signed, unsigned, lomg, short, float
 
