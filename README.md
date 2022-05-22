@@ -110,13 +110,10 @@ A partial rebuild of the standard *printf* function in C.
 
 ### params.c
 
->Functions that carry out different actions per specified flags.
+>Functions that clears struct fields and reset buffer.
 
-``` c
-/* Indetifier : %c or %i or %d or %s or %o or %x or %X or %r or %R or %b or %u */
-```
 
-### num_funct1,2,3.c
+### print-functions.c
 
 >Functions That carry out numeric actions.
 
