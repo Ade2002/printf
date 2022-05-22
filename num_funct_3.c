@@ -4,7 +4,6 @@
  * @num: The number to divide
  * @n: The power of 10
  * @can_free: Specifies whether the given number can be freed
- *
  * Return: The quotient of the number and the power of 10, otherwise NULL
  */
 char *div_by_10_exp(char *num, unsigned short n, char can_free)
